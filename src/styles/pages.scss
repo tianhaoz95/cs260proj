@@ -1,0 +1,74 @@
+.home-page {
+  text-align: center;
+  padding-top: 200px;
+  .home-link {
+    color: white;
+    font-size: 30px;
+  }
+}
+
+.meme-page {
+  .meme-btn {
+    margin: 30px;
+    width: 50%;
+  }
+  .meme-btn-group {
+    text-align: center;
+    margin-top: 100px;
+  }
+  .meme-img-col {
+    text-align: center;
+  }
+  .meme-img {
+    margin-top: 100px;
+    width: 80%;
+    border-radius: 10px;
+  }
+  .meme-contribute-link {
+    color: white;
+  }
+}
+
+.comment-page {
+  text-align: center;
+  .comment-page-secondary-container {
+    padding-top: 100px;
+  }
+  .comment-textarea {
+    width: 70%;
+    border-radius: 15px;
+  }
+  .comment-btn {
+    margin-top: 30px;
+    width: 70%;
+  }
+}
+
+.statistics-page {
+  text-align: center;
+  padding-top: 100px;
+  .statistics-btn-group {
+    text-align: center !important;
+  }
+  .statistics-btn {
+    width: 80%;
+  }
+  .statistics-btn-nav {
+    margin: 20px;
+  }
+}
+
+.contribute-page {
+  text-align: center;
+  padding-top: 100px;
+  .contribute-btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .contribute-cancel-link {
+    color: white;
+  }
+  .contribute-cancel-link-container {
+    margin-top: 20px;
+  }
+}

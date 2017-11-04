@@ -1,0 +1,7 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(32,166,231,.8);
+  font-family: sans-serif;
+  height: 100%;
+}
