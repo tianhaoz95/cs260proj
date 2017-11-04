@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
 
 import _ from 'lodash'
+import floating from 'floating.js'
 
 class MemePage extends Component {
   constructor(props){
@@ -12,12 +13,18 @@ class MemePage extends Component {
       status: "loading",
       url: null,
       id: null,
-      type: null
+      type: null,
+      shoutout: ""
     }
+    this.inputRef = null
+    this.shoutoutRef = null
     this.randomnize = this.randomnize.bind(this)
     this.like = this.like.bind(this)
     this.dislike = this.dislike.bind(this)
     this.funny = this.funny.bind(this)
+    this.handleShoutout = this.handleShoutout.bind(this)
+    this.handleShoutoutSend = this.handleShoutoutSend.bind(this)
+    this.handleEnter = this.handleEnter.bind(this)
   }
 
   componentDidMount() {
@@ -38,6 +45,18 @@ class MemePage extends Component {
             url: meme.url,
             id: id,
             status: "done"
+          })
+          thisObj.shoutoutRef = firebase.database().ref("shoutout/" + id)
+          thisObj.shoutoutRef.on("child_added", function (shoutoutSnap) {
+            var shoutout = shoutoutSnap.val()
+            if (shoutout !== null) {
+              floating({
+                content: shoutout.content,
+                number: 1,
+                repeat: 1,
+                duration: 15
+              })
+            }
           })
         })
       } else {
@@ -67,6 +86,19 @@ class MemePage extends Component {
             status: "done"
           })
         })
+        thisObj.shoutoutRef.off()
+        thisObj.shoutoutRef = firebase.database().ref("shoutout/" + id)
+        thisObj.shoutoutRef.on("child_added", function (shoutoutSnap) {
+          var shoutout = shoutoutSnap.val()
+          if (shoutout !== null) {
+            floating({
+              content: shoutout.content,
+              number: 1,
+              repeat: 1,
+              duration: 15
+            })
+          }
+        })
       } else {
         thisObj.setState({status: "empty"})
       }
@@ -83,6 +115,42 @@ class MemePage extends Component {
 
   funny() {
     this.setState({status: "funny"})
+  }
+
+  handleShoutout(e) {
+    this.setState({shoutout: e.target.value})
+  }
+
+  handleShoutoutSend() {
+    var thisObj = this
+    var htmlMsg = "<p style=\"color:white\">" + thisObj.state.shoutout + "</p>"
+    var update = {content: htmlMsg}
+    var shoutoutRef = firebase.database().ref("shoutout/" + thisObj.state.id).push()
+    var key = shoutoutRef.key
+    thisObj.inputRef.value = ""
+    thisObj.setState({shoutout: ""})
+    shoutoutRef.set(update)
+    .then(function () {
+      var rmRef = firebase.database().ref("shoutout/" + thisObj.state.id + "/" + key)
+      setTimeout(function () {
+        rmRef.remove()
+        .then(function () {
+          console.log("shout out removed");
+        })
+        .catch(function (e) {
+          console.log(e);
+        })
+      }, 5000);
+    })
+    .catch(function (e) {
+      console.log(e)
+    })
+  }
+
+  handleEnter(e) {
+    if(e.key === 'Enter') {
+        this.handleShoutoutSend()
+    }
   }
 
   render(){
@@ -152,6 +220,12 @@ class MemePage extends Component {
             </div>
             <div>
               <button type="button" className="btn btn-light meme-btn" onClick={this.randomnize}> Another one </button>
+            </div>
+            <div className="input-group meme-input">
+              <input type="text" className="form-control" placeholder="Shout out your idea" aria-label="Shout out your idea" onChange={this.handleShoutout} ref={(ref) => {this.inputRef = ref}} onKeyDown={this.handleEnter}/>
+              <span className="input-group-btn">
+                <button className="btn btn-success" type="button" onClick={this.handleShoutoutSend}>Go!</button>
+              </span>
             </div>
             <div>
               <Link className="meme-contribute-link" to="/contribute" > Contribute! </Link>

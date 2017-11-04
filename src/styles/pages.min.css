@@ -9,9 +9,14 @@
   margin: 30px;
   width: 50%;
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5); }
+.meme-page .meme-input {
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 30px;
+  margin-bottom: 30px; }
 .meme-page .meme-btn-group {
   text-align: center;
-  margin-top: 120px; }
+  margin-top: 80px; }
 .meme-page .meme-img-col {
   text-align: center; }
 .meme-page .meme-img {
