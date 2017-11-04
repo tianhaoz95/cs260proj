@@ -12,4 +12,4 @@ First clone the repo, then go inside the project folder
 `npm start` will start the local server
 
 ## Contribute
-Please send pull request only. Do not straightly commit to the repo! Do not straightly commit to the repo! Do not straightly commit to the repo!
+Please send pull request only. Do not commit to the repo! Do not commit to the repo! Do not commit to the repo!
