@@ -100,8 +100,8 @@ class ContributePage extends Component {
     }
     return(
       <div className="container contribute-page">
-        Contribute Page
-        <div>
+        <h1 className="contribute-title">We need you! Contribute some memes!</h1>
+        <div className="contribute-dropbox">
           <DropzoneComponent
             config={this.config}
             eventHandlers={this.handlers}

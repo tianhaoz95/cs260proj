@@ -7,13 +7,15 @@
 
 .meme-page .meme-btn {
   margin: 30px;
-  width: 50%; }
+  width: 50%;
+  box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5); }
 .meme-page .meme-btn-group {
   text-align: center;
-  margin-top: 100px; }
+  margin-top: 120px; }
 .meme-page .meme-img-col {
   text-align: center; }
 .meme-page .meme-img {
+  box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
   margin-top: 100px;
   width: 80%;
   border-radius: 10px; }
@@ -34,18 +36,32 @@
 .statistics-page {
   text-align: center;
   padding-top: 100px; }
+  .statistics-page .statistics-title {
+    color: white;
+    margin: 30px; }
   .statistics-page .statistics-btn-group {
     text-align: center !important; }
   .statistics-page .statistics-btn {
-    width: 80%; }
+    width: 100%; }
   .statistics-page .statistics-btn-nav {
+    width: 30%;
     margin: 20px; }
+  .statistics-page .statistics-comment-group {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px; }
 
 .contribute-page {
   text-align: center;
   padding-top: 100px; }
+  .contribute-page .contribute-title {
+    color: white;
+    margin: 30px; }
+  .contribute-page .contribute-dropbox {
+    width: 80%;
+    margin-left: 10%; }
   .contribute-page .contribute-btn {
-    width: 100%;
+    width: 80%;
     margin-top: 20px; }
   .contribute-page .contribute-cancel-link {
     color: white; }

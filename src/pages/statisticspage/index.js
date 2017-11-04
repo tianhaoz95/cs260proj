@@ -102,7 +102,17 @@ class StatisticPage extends Component {
     if (this.state.status === "loading") {
       return(
         <div>
-          loading
+          <div className="progress">
+            <div
+              className="progress-bar progress-bar-striped progress-bar-animated"
+              role="progressbar"
+              aria-valuenow={100}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              style={{width: "100%"}}
+              >
+            </div>
+          </div>
         </div>
       )
     }
@@ -122,36 +132,33 @@ class StatisticPage extends Component {
 
     return(
       <div className="container statistics-page">
-        Statistic Page
+        <h1 className="statistics-title">What do other people think?</h1>
         <div className="row">
           <div className="col">
             <button type="button" className="btn btn-light statistics-btn" onClick={this.handleSwitchLike}>
-              Like:
-              {likeRatio.toString()} %
+              Like: {likeRatio.toString()}% (click to see their comments)
             </button>
           </div>
           <div className="col">
             <button type="button" className="btn btn-light statistics-btn" onClick={this.handleSwitchDislike}>
-              Dislike:
-              {dislikeRatio.toString()} %
+              Dislike: {dislikeRatio.toString()}% (click to see their comments)
             </button>
           </div>
           <div className="col">
             <button type="button" className="btn btn-light statistics-btn" onClick={this.handleSwitchFunny}>
-              Funny:
-              {funnyRatio.toString()} %
+              Funny: {funnyRatio.toString()}% (click to see their comments)
             </button>
           </div>
         </div>
-        <div>
+        <div className="list-group statistics-comment-group">
           {this.state.show.length === 0 ? (
-            <div>
+            <div className="list-group-item">
               Sorry no comments now
             </div>
           ) : (null)}
           {this.state.show.map((item, index) => (
-            <div key={index}>
-              <p>{item.comment}</p>
+            <div className="list-group-item" key={index}>
+              {item.comment}
             </div>
           ))}
         </div>

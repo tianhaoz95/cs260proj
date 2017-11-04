@@ -101,9 +101,9 @@ class MemePage extends Component {
     if (this.state.status === "loading") {
       return(
         <div>
-          <div class="progress">
+          <div className="progress">
             <div
-              class="progress-bar progress-bar-striped progress-bar-animated"
+              className="progress-bar progress-bar-striped progress-bar-animated"
               role="progressbar"
               aria-valuenow={100}
               aria-valuemin={0}
