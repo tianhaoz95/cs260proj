@@ -1,0 +1,61 @@
+[debug] [2017-11-05T08:37:33.528Z] ----------------------------------------------------------------------
+[debug] [2017-11-05T08:37:33.531Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-11-05T08:37:33.531Z] CLI Version:   3.14.0
+[debug] [2017-11-05T08:37:33.531Z] Platform:      darwin
+[debug] [2017-11-05T08:37:33.531Z] Node Version:  v8.2.0
+[debug] [2017-11-05T08:37:33.532Z] Time:          Sun Nov 05 2017 01:37:33 GMT-0700 (PDT)
+[debug] [2017-11-05T08:37:33.532Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-05T08:37:33.548Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-05T08:37:33.548Z] > authorizing via signed-in user
+[debug] [2017-11-05T08:37:33.550Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-05T08:37:33.550Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/sMOT0TwbULlx0NOmD3MWPKMqTIZGlzUXv_4SGXGhyck',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Nov 05 2017 01:37:33 GMT-0700 (PDT)
+[debug] [2017-11-05T08:37:33.935Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-05T08:37:33.943Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cs260proj  
+ Sun Nov 05 2017 01:37:33 GMT-0700 (PDT)
+[debug] [2017-11-05T08:37:34.574Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-05T08:37:34.575Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/cs260proj/tokens  
+ Sun Nov 05 2017 01:37:34 GMT-0700 (PDT)
+[debug] [2017-11-05T08:37:35.037Z] <<< HTTP RESPONSE 200
+[info] 2
+[info] 
+[info] === Deploying to 'cs260proj'...
+[info] 
+[info] i  deploying functions, hosting
+[debug] [2017-11-05T08:37:35.991Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.4.2",
+    "firebase-functions": "^0.7.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-11-05T08:37:35.993Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/cs260proj?view=CONSUMER_VIEW  
+ Sun Nov 05 2017 01:37:35 GMT-0700 (PDT)
+[debug] [2017-11-05T08:37:35.994Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/cs260proj?view=CONSUMER_VIEW  
+ Sun Nov 05 2017 01:37:35 GMT-0700 (PDT)
+[debug] [2017-11-05T08:37:36.744Z] <<< HTTP RESPONSE 200
+[info] ✔  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-11-05T08:37:36.812Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-11-05T08:37:36.813Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/cs260proj  
+ Sun Nov 05 2017 01:37:36 GMT-0700 (PDT)
+[debug] [2017-11-05T08:37:36.813Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/cs260proj/apiKeys  
+ Sun Nov 05 2017 01:37:36 GMT-0700 (PDT)
+[debug] [2017-11-05T08:37:37.404Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-05T08:37:37.435Z] <<< HTTP RESPONSE 200
