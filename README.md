@@ -6,6 +6,7 @@
 Overall this is a react app. Most of the code is developed in JSX. The page folder contains all the pages, and the style folder contains all the style for the pages (global styles are in the index.css file). All the front end code should use JSX, vanilla Javascript and JQuery are not accepted. For style, it's okay to experiment with CSS, but production level build should use SASS.
 
 ## TODO
+- [ ] Populate homepage
 - [ ] Add mobile support (shouldn't take too long)
 - [ ] Configure manifest file
 - [ ] Add hashtag detection, database support, and render method
