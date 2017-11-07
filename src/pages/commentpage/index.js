@@ -10,7 +10,8 @@ class CommentPage extends Component {
       status: "waiting",
       id: props.match.params.id,
       type: props.match.params.type,
-      comment: ""
+      comment: "",
+      hashtags: []
     }
     this.commentChange = this.commentChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -18,7 +19,15 @@ class CommentPage extends Component {
   }
 
   commentChange(e) {
-    this.setState({comment: e.target.value})
+    var comment = e.target.value
+    var hashtags = comment.match(/#\w+/g)
+    if (hashtags === null) {
+      hashtags = []
+    }
+    this.setState({
+      comment: comment,
+      hashtags: hashtags
+    })
   }
 
   handleSubmit() {
@@ -35,8 +44,22 @@ class CommentPage extends Component {
         memeRef.once("value")
         .then(function (snapshot) {
           var val = snapshot.val()
+          var hashtags = val.hashtags
+          if (hashtags === undefined || hashtags === null) {
+            hashtags = {}
+          }
+          var newhashtags = thisObj.state.hashtags
+          for (var i = 0; i < newhashtags.length; i++) {
+            var tag = newhashtags[i].replace("#", "")
+            if (tag in hashtags) {
+              hashtags[tag] = hashtags[tag] + 1
+            } else {
+              hashtags[tag] = 1
+            }
+          }
           var update = {}
           update[thisObj.state.type] = val[thisObj.state.type] + 1
+          update["hashtags"] = hashtags
           memeRef.update(update)
           .then(function () {
             thisObj.setState({status: "done"})
@@ -103,6 +126,11 @@ class CommentPage extends Component {
       <div className="container comment-page">
         <div className="comment-page-secondary-container">
           <h1 className="comment-title">Share your ideas</h1>
+          <div>
+            {this.state.hashtags.map((tag, idx) => (
+              <span key={idx} className="badge badge-pill badge-success comment-hashtag">{tag}</span>
+            ))}
+          </div>
           <div>
             <textarea className="comment-textarea" rows="5" type="text" onChange={this.commentChange} placeholder="Your awesome ideas ..." />
           </div>

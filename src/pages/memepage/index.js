@@ -14,7 +14,8 @@ class MemePage extends Component {
       url: null,
       id: null,
       type: null,
-      shoutout: ""
+      shoutout: "",
+      hashtags: []
     }
     this.inputRef = null
     this.shoutoutRef = null
@@ -41,10 +42,17 @@ class MemePage extends Component {
         memeRef.once("value")
         .then(function (memesnapshot) {
           var meme = memesnapshot.val()
+          var hashtags = []
+          if (meme.hashtags !== undefined && meme.hashtags !== null) {
+            for (var key in meme.hashtags) {
+              hashtags.push("#" + key)
+            }
+          }
           thisObj.setState({
             url: meme.url,
             id: id,
-            status: "done"
+            status: "done",
+            hashtags: hashtags
           })
           thisObj.shoutoutRef = firebase.database().ref("shoutout/" + id)
           thisObj.shoutoutRef.on("child_added", function (shoutoutSnap) {
@@ -80,9 +88,16 @@ class MemePage extends Component {
         memeRef.once("value")
         .then(function (memesnapshot) {
           var meme = memesnapshot.val()
+          var hashtags = []
+          if (meme.hashtags !== undefined && meme.hashtags !== null) {
+            for (var key in meme.hashtags) {
+              hashtags.push("#" + key)
+            }
+          }
           thisObj.setState({
             url: meme.url,
             id: id,
+            hashtags: hashtags,
             status: "done"
           })
         })
@@ -207,6 +222,11 @@ class MemePage extends Component {
         <div className="row">
           <div className="col meme-img-col">
             <img className="meme-img" alt="meme" src={this.state.url} />
+            <div>
+              {this.state.hashtags.map((tag, idx) => (
+                <span key={idx} className="badge badge-pill badge-success meme-page-hashtag">{tag}</span>
+              ))}
+            </div>
           </div>
           <div className="col meme-btn-group">
             <div>

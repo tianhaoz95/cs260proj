@@ -9,6 +9,8 @@
   margin: 30px;
   width: 50%;
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5); }
+.meme-page .meme-page-hashtag {
+  margin: 5px; }
 .meme-page .meme-input {
   width: 50%;
   margin-left: 25%;
@@ -22,7 +24,8 @@
 .meme-page .meme-img {
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
   margin-top: 100px;
-  width: 80%;
+  max-width: 80%;
+  max-height: 400px;
   border-radius: 10px; }
 .meme-page .meme-contribute-link {
   color: white; }
@@ -33,6 +36,8 @@
     color: white;
     margin-top: 30px;
     margin-bottom: 30px; }
+  .comment-page .comment-hashtag {
+    margin: 5px; }
   .comment-page .comment-error {
     color: white; }
   .comment-page .comment-back {
