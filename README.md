@@ -7,6 +7,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 
 ## TODO
 - [ ] Add mobile support (shouldn't take too long)
+- [ ] Configure manifest file
 - [ ] Add hashtag detection, database support, and render method
 - [ ] Improve UI design for statistics page
 
