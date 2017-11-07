@@ -7,6 +7,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 
 ## TODO
 - [ ] Add redirect to meme maker on contribute page
+- [ ] Fix styling issue in Dropzone component on contribute page
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
 - [ ] Add mobile support (shouldn't take too long)
