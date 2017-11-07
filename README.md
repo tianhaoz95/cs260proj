@@ -14,6 +14,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Configure manifest file
 - [ ] Add hashtag detection, database support, and render method
 - [ ] Improve UI design for statistics page
+- [ ] Change the html title to "social echo chamber breaker"
 - [x] ~~Change color for comment page~~
 
 ## Pre-requisites
