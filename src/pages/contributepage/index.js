@@ -23,7 +23,7 @@ class ContributePage extends Component {
     this.fileExceed = this.fileExceed.bind(this)
     this.upload = this.upload.bind(this)
     this.config = {
-      iconFiletypes: ['.jpg', '.png', '.gif'],
+      iconFiletypes: ['.jpg', '.png'],
       showFiletypeIcon: true,
       postUrl: 'no-url'
     }

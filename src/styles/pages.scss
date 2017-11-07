@@ -1,9 +1,9 @@
 .home-page {
   text-align: center;
-  padding-top: 200px;
+  padding-top: 300px;
   .home-link {
     color: white;
-    font-size: 30px;
+    font-size: 50px;
   }
 }
 
@@ -39,6 +39,20 @@
 
 .comment-page {
   text-align: center;
+  .comment-title {
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .comment-error {
+    color: white;
+  }
+  .comment-back {
+    color: white;
+  }
+  .comment-back-container {
+    margin-top: 15px;
+  }
   .comment-page-secondary-container {
     padding-top: 100px;
   }

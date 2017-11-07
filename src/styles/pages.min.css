@@ -1,9 +1,9 @@
 .home-page {
   text-align: center;
-  padding-top: 200px; }
+  padding-top: 300px; }
   .home-page .home-link {
     color: white;
-    font-size: 30px; }
+    font-size: 50px; }
 
 .meme-page .meme-btn {
   margin: 30px;
@@ -29,6 +29,16 @@
 
 .comment-page {
   text-align: center; }
+  .comment-page .comment-title {
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  .comment-page .comment-error {
+    color: white; }
+  .comment-page .comment-back {
+    color: white; }
+  .comment-page .comment-back-container {
+    margin-top: 15px; }
   .comment-page .comment-page-secondary-container {
     padding-top: 100px; }
   .comment-page .comment-textarea {

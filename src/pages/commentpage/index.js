@@ -1,8 +1,7 @@
 import * as firebase from 'firebase'
 
+import { Link, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
-
-import { Redirect } from 'react-router-dom'
 
 class CommentPage extends Component {
   constructor(props){
@@ -103,13 +102,13 @@ class CommentPage extends Component {
     return(
       <div className="container comment-page">
         <div className="comment-page-secondary-container">
-          Comment Page
+          <h1 className="comment-title">Share your ideas</h1>
           <div>
-            <textarea className="comment-textarea" rows="5" type="text" onChange={this.commentChange} />
+            <textarea className="comment-textarea" rows="5" type="text" onChange={this.commentChange} placeholder="Your awesome ideas ..." />
           </div>
           {this.state.status === "error" ? (
             <div>
-              Something went wrong
+              <p className="comment-error">Your comment cannot be empty</p>
             </div>
           ) : (null)}
           <div>
@@ -117,6 +116,9 @@ class CommentPage extends Component {
           </div>
           <div>
             <button type="button" className="btn btn-light comment-btn" onClick={this.handleSkip}> Skip </button>
+          </div>
+          <div className="comment-back-container">
+            <Link className="comment-back" to="/meme">Go back to memes</Link>
           </div>
         </div>
       </div>
