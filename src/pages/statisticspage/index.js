@@ -164,7 +164,7 @@ class StatisticPage extends Component {
         </div>
         <button type="button" className="btn btn-light statistics-btn-nav" onClick={this.handleRandomize}> Some other opinions </button>
         <button type="button" className="btn btn-light statistics-btn-nav">
-          <Link to="/meme">
+          <Link to="/meme" className="statistics-link">
             More memes
           </Link>
         </button>
