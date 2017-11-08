@@ -21,6 +21,7 @@
     margin-left: 25%;
     margin-top: 30px;
     margin-bottom: 30px;
+    box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.5);
   }
   .meme-btn-group {
     text-align: center;
@@ -80,6 +81,11 @@
     color: white;
     margin: 30px;
   }
+  .statistics-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
   .statistics-btn-group {
     text-align: center !important;
   }
@@ -107,6 +113,12 @@
   .contribute-dropbox {
     width: 80%;
     margin-left: 10%;
+  }
+  .contribute-meme-generator-link {
+    color: white;
+  }
+  .contribute-meme-generator-link-container {
+    margin-top: 20px;
   }
   .contribute-btn {
     width: 80%;

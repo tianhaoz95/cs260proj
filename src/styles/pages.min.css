@@ -15,7 +15,8 @@
   width: 50%;
   margin-left: 25%;
   margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5); }
 .meme-page .meme-btn-group {
   text-align: center;
   margin-top: 80px; }
@@ -59,6 +60,10 @@
   .statistics-page .statistics-title {
     color: white;
     margin: 30px; }
+  .statistics-page .statistics-link {
+    display: block;
+    height: 100%;
+    width: 100%; }
   .statistics-page .statistics-btn-group {
     text-align: center !important; }
   .statistics-page .statistics-btn {
@@ -80,6 +85,10 @@
   .contribute-page .contribute-dropbox {
     width: 80%;
     margin-left: 10%; }
+  .contribute-page .contribute-meme-generator-link {
+    color: white; }
+  .contribute-page .contribute-meme-generator-link-container {
+    margin-top: 20px; }
   .contribute-page .contribute-btn {
     width: 80%;
     margin-top: 20px; }

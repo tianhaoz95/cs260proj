@@ -117,6 +117,11 @@ class ContributePage extends Component {
             <button type="button" className="btn btn-light contribute-btn" onClick={this.upload}> Upload </button>
           </div>
         )}
+        <div className="contribute-meme-generator-link-container">
+          <a href="https://memegenerator.net/" target="_blank" className="contribute-meme-generator-link">
+            Go to meme generator
+          </a>
+        </div>
         <div className="contribute-cancel-link-container">
           <Link className="contribute-cancel-link" to="/meme">
             Cancel and go back to memes
