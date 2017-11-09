@@ -138,7 +138,7 @@ class MemePage extends Component {
 
   handleShoutoutSend() {
     var thisObj = this
-    var htmlMsg = "<p style=\"color:white\">" + thisObj.state.shoutout + "</p>"
+    var htmlMsg = "<div class=\"shout-out-container\"><p class=\"shout-out-text\">" + thisObj.state.shoutout + "</p>"
     var update = {content: htmlMsg}
     var shoutoutRef = firebase.database().ref("shoutout/" + thisObj.state.id).push()
     var key = shoutoutRef.key
@@ -155,7 +155,7 @@ class MemePage extends Component {
         .catch(function (e) {
           console.log(e);
         })
-      }, 5000);
+      }, 1500);
     })
     .catch(function (e) {
       console.log(e)
@@ -221,7 +221,7 @@ class MemePage extends Component {
       <div className="container meme-page">
         <div className="row">
           <div className="col meme-img-col">
-            <img className="meme-img" alt="meme" src={this.state.url} />
+            <img onClick={this.randomnize} className="meme-img" alt="meme" src={this.state.url} />
             <div>
               {this.state.hashtags.map((tag, idx) => (
                 <span key={idx} className="badge badge-pill badge-success meme-page-hashtag">{tag}</span>
@@ -230,25 +230,35 @@ class MemePage extends Component {
           </div>
           <div className="col meme-btn-group">
             <div>
-              <button type="button" className="btn btn-light meme-btn" onClick={this.like}> I like it! </button>
+              <button type="button" className="btn btn-success meme-btn" onClick={this.like}>
+                <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> I like it!
+              </button>
             </div>
             <div>
-              <button type="button" className="btn btn-light meme-btn" onClick={this.funny}> It's funny! </button>
+              <button type="button" className="btn btn-warning meme-btn" onClick={this.funny}>
+                <i className="fa fa-hand-spock-o" aria-hidden="true"></i> It's funny! 
+              </button>
             </div>
             <div>
-              <button type="button" className="btn btn-light meme-btn" onClick={this.dislike}> I don't like it! </button>
+              <button type="button" className="btn btn-danger meme-btn" onClick={this.dislike}>
+                <i className="fa fa-thumbs-o-down" aria-hidden="true"></i> I don't like it! 
+              </button>
             </div>
             <div>
-              <button type="button" className="btn btn-light meme-btn" onClick={this.randomnize}> Another one </button>
+              <button type="button" className="btn btn-light meme-btn" onClick={this.randomnize}>
+                <i className="fa fa-random" aria-hidden="true"></i> Next random meme
+              </button>
             </div>
             <div className="input-group meme-input">
               <input type="text" className="form-control" placeholder="Shout out your idea" aria-label="Shout out your idea" onChange={this.handleShoutout} ref={(ref) => {this.inputRef = ref}} onKeyDown={this.handleEnter}/>
               <span className="input-group-btn">
-                <button className="btn btn-success" type="button" onClick={this.handleShoutoutSend}>Go!</button>
+                <button className="btn btn-success" type="button" onClick={this.handleShoutoutSend}>
+                  <i className="fa fa-paper-plane-o" aria-hidden="true"></i>
+                </button>
               </span>
             </div>
             <div>
-              <Link className="meme-contribute-link" to="/contribute" > Contribute! </Link>
+              <Link className="meme-contribute-link" to="/contribute" >Contribute more memes!!!</Link>
             </div>
           </div>
         </div>

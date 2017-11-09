@@ -7,6 +7,19 @@
   }
 }
 
+.shout-out-text {
+  color: white !important;
+  word-break: keep-all !important;
+  width: 100% !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.shout-out-container {
+  width: 400px !important;
+  text-align: left !important;
+}
+
 .meme-page {
   .meme-btn {
     margin: 30px;
@@ -57,20 +70,23 @@
   }
   .comment-back {
     color: white;
+    display: block;
+    height: 100%;
   }
   .comment-back-container {
-    margin-top: 15px;
+    margin-top: 0px;
   }
   .comment-page-secondary-container {
     padding-top: 100px;
   }
   .comment-textarea {
-    width: 70%;
+    width: 50%;
     border-radius: 15px;
   }
   .comment-btn {
     margin-top: 30px;
-    width: 70%;
+    box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.5);
+    width: 50%;
   }
 }
 
@@ -91,6 +107,7 @@
   }
   .statistics-btn {
     width: 100%;
+    box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.5);
   }
   .statistics-btn-nav {
     width: 30%;
@@ -105,29 +122,35 @@
 
 .contribute-page {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 80px;
   .contribute-title {
     color: white;
-    margin: 30px;
+    margin-top: 30px;
   }
-  .contribute-dropbox {
-    width: 80%;
-    margin-left: 10%;
-  }
-  .contribute-meme-generator-link {
+  .contribute-subtitle {
     color: white;
   }
+  .contribute-dropbox {
+    width: 50%;
+    margin-left: 25%;
+  }
+  .contribute-meme-generator-link {
+    display: block;
+    height: 100%;
+  }
   .contribute-meme-generator-link-container {
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .contribute-btn {
-    width: 80%;
+    width: 50%;
     margin-top: 20px;
   }
   .contribute-cancel-link {
+    display: block;
+    height: 100%;
     color: white;
   }
   .contribute-cancel-link-container {
-    margin-top: 20px;
+    margin-top: 0px;
   }
 }

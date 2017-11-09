@@ -5,6 +5,17 @@
     color: white;
     font-size: 50px; }
 
+.shout-out-text {
+  color: white !important;
+  word-break: keep-all !important;
+  width: 100% !important;
+  margin: 0px !important;
+  padding: 0px !important; }
+
+.shout-out-container {
+  width: 400px !important;
+  text-align: left !important; }
+
 .meme-page .meme-btn {
   margin: 30px;
   width: 50%;
@@ -42,17 +53,20 @@
   .comment-page .comment-error {
     color: white; }
   .comment-page .comment-back {
-    color: white; }
+    color: white;
+    display: block;
+    height: 100%; }
   .comment-page .comment-back-container {
-    margin-top: 15px; }
+    margin-top: 0px; }
   .comment-page .comment-page-secondary-container {
     padding-top: 100px; }
   .comment-page .comment-textarea {
-    width: 70%;
+    width: 50%;
     border-radius: 15px; }
   .comment-page .comment-btn {
     margin-top: 30px;
-    width: 70%; }
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
+    width: 50%; }
 
 .statistics-page {
   text-align: center;
@@ -67,7 +81,8 @@
   .statistics-page .statistics-btn-group {
     text-align: center !important; }
   .statistics-page .statistics-btn {
-    width: 100%; }
+    width: 100%;
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5); }
   .statistics-page .statistics-btn-nav {
     width: 30%;
     margin: 20px; }
@@ -78,23 +93,28 @@
 
 .contribute-page {
   text-align: center;
-  padding-top: 100px; }
+  padding-top: 80px; }
   .contribute-page .contribute-title {
     color: white;
-    margin: 30px; }
-  .contribute-page .contribute-dropbox {
-    width: 80%;
-    margin-left: 10%; }
-  .contribute-page .contribute-meme-generator-link {
+    margin-top: 30px; }
+  .contribute-page .contribute-subtitle {
     color: white; }
+  .contribute-page .contribute-dropbox {
+    width: 50%;
+    margin-left: 25%; }
+  .contribute-page .contribute-meme-generator-link {
+    display: block;
+    height: 100%; }
   .contribute-page .contribute-meme-generator-link-container {
-    margin-top: 20px; }
+    margin-top: 0px; }
   .contribute-page .contribute-btn {
-    width: 80%;
+    width: 50%;
     margin-top: 20px; }
   .contribute-page .contribute-cancel-link {
+    display: block;
+    height: 100%;
     color: white; }
   .contribute-page .contribute-cancel-link-container {
-    margin-top: 20px; }
+    margin-top: 0px; }
 
 /*# sourceMappingURL=pages.min.css.map */
