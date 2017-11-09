@@ -125,7 +125,7 @@ class CommentPage extends Component {
     return(
       <div className="container comment-page">
         <div className="comment-page-secondary-container">
-          <h1 className="comment-title">Share your ideas</h1>
+          <h1 className="comment-title">Share your ideas, and hashtag topics</h1>
           <div>
             {this.state.hashtags.map((tag, idx) => (
               <span key={idx} className="badge badge-pill badge-success comment-hashtag">{tag}</span>

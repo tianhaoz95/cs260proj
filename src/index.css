@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: rgba(32,166,231,.8);
+  background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%);
   font-family: sans-serif;
   height: 100%;
 }
