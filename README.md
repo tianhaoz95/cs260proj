@@ -10,6 +10,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Fix styling issue in Dropzone component on contribute page
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
+- [ ] Add image checking
 - [ ] Add mobile support (shouldn't take too long)
 - [x] ~~Configure manifest file~~
 - [ ] improve the machanism for what hashtags to show
