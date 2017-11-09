@@ -132,21 +132,21 @@ class StatisticPage extends Component {
 
     return(
       <div className="container statistics-page">
-        <h1 className="statistics-title">What do other people think?</h1>
+        <h1 className="statistics-title">What do other people think? Click to see their comments</h1>
         <div className="row">
           <div className="col">
-            <button type="button" className="btn btn-light statistics-btn" onClick={this.handleSwitchLike}>
-              Like: {likeRatio.toString()}% (click to see their comments)
+            <button type="button" className="btn btn-success statistics-btn" onClick={this.handleSwitchLike}>
+              <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> Like: {likeRatio.toString()}%
             </button>
           </div>
           <div className="col">
-            <button type="button" className="btn btn-light statistics-btn" onClick={this.handleSwitchDislike}>
-              Dislike: {dislikeRatio.toString()}% (click to see their comments)
+            <button type="button" className="btn btn-warning statistics-btn" onClick={this.handleSwitchFunny}>
+              <i className="fa fa-hand-spock-o" aria-hidden="true"></i> Funny: {funnyRatio.toString()}%
             </button>
           </div>
           <div className="col">
-            <button type="button" className="btn btn-light statistics-btn" onClick={this.handleSwitchFunny}>
-              Funny: {funnyRatio.toString()}% (click to see their comments)
+            <button type="button" className="btn btn-danger statistics-btn" onClick={this.handleSwitchDislike}>
+              <i className="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike: {dislikeRatio.toString()}%
             </button>
           </div>
         </div>
@@ -162,10 +162,12 @@ class StatisticPage extends Component {
             </div>
           ))}
         </div>
-        <button type="button" className="btn btn-light statistics-btn-nav" onClick={this.handleRandomize}> Some other opinions </button>
+        <button type="button" className="btn btn-light statistics-btn-nav" onClick={this.handleRandomize}>
+          <i className="fa fa-random" aria-hidden="true"></i> Some other opinions
+        </button>
         <button type="button" className="btn btn-light statistics-btn-nav">
           <Link to="/meme" className="statistics-link">
-            More memes
+            Go back for more memes
           </Link>
         </button>
       </div>

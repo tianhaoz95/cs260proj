@@ -140,13 +140,21 @@ class CommentPage extends Component {
             </div>
           ) : (null)}
           <div>
-            <button type="button" className="btn btn-light comment-btn" onClick={this.handleSubmit}> Submit </button>
+            <button type="button" className="btn btn-success comment-btn" onClick={this.handleSubmit}>
+              <i className="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
+            </button>
           </div>
           <div>
-            <button type="button" className="btn btn-light comment-btn" onClick={this.handleSkip}> Skip </button>
+            <button type="button" className="btn btn-warning comment-btn" onClick={this.handleSkip}>
+              <i className="fa fa-play" aria-hidden="true"></i> Skip
+            </button>
           </div>
           <div className="comment-back-container">
-            <Link className="comment-back" to="/meme">Go back to memes</Link>
+            <button type="button" className="btn btn-danger comment-btn">
+              <Link className="comment-back" to="/meme">
+                <i className="fa fa-reply" aria-hidden="true"></i> Go back to memes
+              </Link>
+            </button>
           </div>
         </div>
       </div>

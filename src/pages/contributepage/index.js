@@ -54,6 +54,9 @@ class ContributePage extends Component {
 
   upload() {
     var thisObj = this
+    if (thisObj.state.file === null || thisObj.state.file === undefined) {
+      return
+    }
     thisObj.setState({status: "uploading"})
     var ref = firebase.database().ref("memes")
     var key = ref.push().key
@@ -100,7 +103,8 @@ class ContributePage extends Component {
     }
     return(
       <div className="container contribute-page">
-        <h1 className="contribute-title">We need you! Contribute some memes!</h1>
+        <h1 className="contribute-title">We need you!</h1>
+        <h4 className="contribute-subtitle">Contribute some memes and get your ideas across!</h4>
         <div className="contribute-dropbox">
           <DropzoneComponent
             config={this.config}
@@ -110,22 +114,28 @@ class ContributePage extends Component {
         {this.state.status === "error" ? "error" : null}
         {this.state.status === "uploading" ? (
           <div>
-            Uploading
+            Uploading ...
           </div>
         ) : (
           <div>
-            <button type="button" className="btn btn-light contribute-btn" onClick={this.upload}> Upload </button>
+            <button type="button" className="btn btn-success contribute-btn" onClick={this.upload}>
+              <i className="fa fa-cloud-upload" aria-hidden="true"></i> Upload
+            </button>
           </div>
         )}
         <div className="contribute-meme-generator-link-container">
-          <a href="https://memegenerator.net/" target="_blank" className="contribute-meme-generator-link">
-            Go to meme generator
-          </a>
+          <button type="button" className="btn btn-light contribute-btn">
+            <a href="https://memegenerator.net/" target="_blank" className="contribute-meme-generator-link">
+              <i className="fa fa-external-link" aria-hidden="true"></i> Have a great idea? Go to meme generator
+            </a>
+          </button>
         </div>
         <div className="contribute-cancel-link-container">
-          <Link className="contribute-cancel-link" to="/meme">
-            Cancel and go back to memes
-          </Link>
+          <button type="button" className="btn btn-danger contribute-btn">
+            <Link className="contribute-cancel-link" to="/meme">
+              <i className="fa fa-trash-o" aria-hidden="true"></i> Cancel and go back to memes
+            </Link>
+          </button>
         </div>
       </div>
     )
