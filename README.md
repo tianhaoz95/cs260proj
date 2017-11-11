@@ -11,6 +11,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [x] ~~Change the background to gradient~~
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
+- [ ] Add some restriction to comment to prevent trolls
 - [ ] Should probabaly disable cache at some point
 - [ ] Add image checking
 - [ ] Add mobile support (shouldn't take too long)
