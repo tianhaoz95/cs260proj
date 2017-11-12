@@ -217,13 +217,17 @@ class MemePage extends Component {
         <Redirect to={dest} />
       )
     }
+    var showhashtag = _.shuffle(this.state.hashtags)
+    if (this.state.hashtags.length > 15) {
+      showhashtag = showhashtag.slice(0, 15)
+    }
     return(
       <div className="container meme-page">
         <div className="row">
           <div className="col meme-img-col">
             <img onClick={this.randomnize} className="meme-img" alt="meme" src={this.state.url} />
             <div>
-              {this.state.hashtags.map((tag, idx) => (
+              {showhashtag.map((tag, idx) => (
                 <span key={idx} className="badge badge-pill badge-success meme-page-hashtag">{tag}</span>
               ))}
             </div>

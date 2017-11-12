@@ -33,7 +33,7 @@ class CommentPage extends Component {
   handleSubmit() {
     var thisObj = this
     thisObj.setState({status: "uploading"})
-    if (thisObj.state.comment !== "") {
+    if (thisObj.state.comment !== "" && thisObj.state.comment.length > 15) {
       var comment = {
         comment: thisObj.state.comment
       }
@@ -136,7 +136,7 @@ class CommentPage extends Component {
           </div>
           {this.state.status === "error" ? (
             <div>
-              <p className="comment-error">Your comment cannot be empty</p>
+              <p className="comment-error">Your comment should be more than 15 characters long</p>
             </div>
           ) : (null)}
           <div>

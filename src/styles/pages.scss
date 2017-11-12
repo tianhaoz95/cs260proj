@@ -92,10 +92,16 @@
 
 .statistics-page {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 5px;
   .statistics-title {
     color: white;
-    margin: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .statistics-chart-container {
+    width: 70%;
+    margin-left: 30%;
+    .statistics-chart {}
   }
   .statistics-link {
     display: block;
@@ -106,7 +112,8 @@
     text-align: center !important;
   }
   .statistics-btn {
-    width: 100%;
+    width: 70%;
+    margin-top: 20px;
     box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.5);
   }
   .statistics-btn-nav {

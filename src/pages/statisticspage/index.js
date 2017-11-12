@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
+import Chart from 'chart.js'
 
 function randomnize(arr, n) {
   if (n >= arr.length) {
@@ -31,6 +32,8 @@ class StatisticPage extends Component {
       comments: [],
       show: []
     }
+    this.chartRef = null
+    this.chartRendered = false
     this.handleRandomize = this.handleRandomize.bind(this)
     this.handleSwitchLike = this.handleSwitchLike.bind(this)
     this.handleSwitchDislike = this.handleSwitchDislike.bind(this)
@@ -63,6 +66,28 @@ class StatisticPage extends Component {
         })
       }
     })
+  }
+
+  componentDidUpdate() {
+    if (this.chartRef !== null && this.chartRendered === false) {
+      var thisObj = this
+      var myDoughnutChart = new Chart(this.chartRef, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data:[thisObj.state.like, thisObj.state.funny, thisObj.state.dislike],
+            backgroundColor: ["#28a745", "#ffc107", "#dc3545"]
+          }],
+          labels: ["People like it", "People think it's funny", "People dislike it"]
+        },
+        options: {
+          legend: {
+            display: false
+          }
+        }
+      })
+      thisObj.chartRendered = true
+    }
   }
 
   handleRandomize() {
@@ -135,19 +160,26 @@ class StatisticPage extends Component {
         <h1 className="statistics-title">What do other people think? Click to see their comments</h1>
         <div className="row">
           <div className="col">
-            <button type="button" className="btn btn-success statistics-btn" onClick={this.handleSwitchLike}>
-              <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> Like: {likeRatio.toString()}%
-            </button>
+            <div className="statistics-chart-container">
+              <canvas ref={(ref) => this.chartRef = ref} className="statistics-chart"></canvas>
+            </div>
           </div>
           <div className="col">
-            <button type="button" className="btn btn-warning statistics-btn" onClick={this.handleSwitchFunny}>
-              <i className="fa fa-hand-spock-o" aria-hidden="true"></i> Funny: {funnyRatio.toString()}%
-            </button>
-          </div>
-          <div className="col">
-            <button type="button" className="btn btn-danger statistics-btn" onClick={this.handleSwitchDislike}>
-              <i className="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike: {dislikeRatio.toString()}%
-            </button>
+            <div className="row">
+              <button type="button" className="btn btn-success statistics-btn" onClick={this.handleSwitchLike}>
+                <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> Like: {likeRatio.toString()}%
+              </button>
+            </div>
+            <div className="row">
+              <button type="button" className="btn btn-warning statistics-btn" onClick={this.handleSwitchFunny}>
+                <i className="fa fa-hand-spock-o" aria-hidden="true"></i> Funny: {funnyRatio.toString()}%
+              </button>
+            </div>
+            <div className="row">
+              <button type="button" className="btn btn-danger statistics-btn" onClick={this.handleSwitchDislike}>
+                <i className="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike: {dislikeRatio.toString()}%
+              </button>
+            </div>
           </div>
         </div>
         <div className="list-group statistics-comment-group">
