@@ -102,6 +102,13 @@
   .contribute-page .contribute-dropbox {
     width: 50%;
     margin-left: 25%; }
+  .contribute-page .contribute-dropbox .dropzone.dz-clickable {
+    background-color: white;
+    opacity: 0.7; }
+  .contribute-page .contribute-dropbox .dz-progress {
+    display: None; }
+  .contribute-page .contribute-msg {
+    color: white; }
   .contribute-page .contribute-meme-generator-link {
     display: block;
     height: 100%; }

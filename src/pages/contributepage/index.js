@@ -55,6 +55,11 @@ class ContributePage extends Component {
   upload() {
     var thisObj = this
     if (thisObj.state.file === null || thisObj.state.file === undefined) {
+      thisObj.setState({status: "error"})
+      return
+    }
+    if (thisObj.state.file.height < 300) {
+      thisObj.setState({status: "error"})
       return
     }
     thisObj.setState({status: "uploading"})
@@ -111,10 +116,18 @@ class ContributePage extends Component {
             eventHandlers={this.handlers}
             djsConfig={this.djsConfig} />
         </div>
-        {this.state.status === "error" ? "error" : null}
+        {this.state.status === "error" ? (
+          <div>
+            <p className="contribute-msg">
+              File cannot be empty or less than 300 x 300
+            </p>
+          </div>
+        ) : null}
         {this.state.status === "uploading" ? (
           <div>
-            Uploading ...
+            <p className="contribute-msg">
+              Uploading ...
+            </p>
           </div>
         ) : (
           <div>
@@ -125,7 +138,7 @@ class ContributePage extends Component {
         )}
         <div className="contribute-meme-generator-link-container">
           <button type="button" className="btn btn-light contribute-btn">
-            <a href="https://memegenerator.net/" target="_blank" className="contribute-meme-generator-link">
+            <a href="https://imgflip.com/memegenerator" target="_blank" className="contribute-meme-generator-link">
               <i className="fa fa-external-link" aria-hidden="true"></i> Have a great idea? Go to meme generator
             </a>
           </button>

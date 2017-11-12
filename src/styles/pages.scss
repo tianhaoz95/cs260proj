@@ -134,6 +134,18 @@
     width: 50%;
     margin-left: 25%;
   }
+  .contribute-dropbox {
+    .dropzone.dz-clickable {
+      background-color: white;
+      opacity: 0.7;
+    }
+    .dz-progress {
+      display: None;
+    }
+  }
+  .contribute-msg {
+    color: white;
+  }
   .contribute-meme-generator-link {
     display: block;
     height: 100%;
