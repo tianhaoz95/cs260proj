@@ -13,6 +13,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] improve the machanism for what hashtags to show
 - [ ] Improve UI design for statistics page
 - [ ] Add chart for the percentages on statitics page
+- [ ] Add room participant counter
 - [x] ~~Add redirect to meme maker on contribute page~~
 - [x] ~~Fix styling issue in Dropzone component on contribute page~~
 - [x] ~~Change the background to gradient~~
