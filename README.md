@@ -23,6 +23,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Add keras AI to check contribute image
 - [ ] Add NLP to check comment
 - [ ] Check for performance issues
+- [ ] Add site structure for search console indexing
 - [ ] Should probabaly disable cache at some point
 - [ ] Add mobile support (shouldn't take too long)
 - [ ] improve the machanism for what hashtags to show
