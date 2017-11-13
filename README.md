@@ -10,6 +10,10 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Need comment validation, too many fucking trolls
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
+- [ ] Add more hint on the comment page
+- [ ] Add image on the comment page
+- [ ] Add image on the statistics page
+- [ ] Add arrow hints on the statistics page
 - [ ] Add keras AI to check contribute image
 - [ ] Add NLP to check comment
 - [ ] Check for performance issues
