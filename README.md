@@ -6,6 +6,9 @@
 Overall this is a react app. Most of the code is developed in JSX. The page folder contains all the pages, and the style folder contains all the style for the pages (global styles are in the index.css file). All the front end code should use JSX, vanilla Javascript and JQuery are not accepted. For style, it's okay to experiment with CSS, but production level build should use SASS.
 
 ## TODO
+
+<img src="https://raw.githubusercontent.com/tianhaoz95/pics/master/funny-gif-to-todo-list-done.gif" height="200"/>
+
 - [ ] Change the text for no comment on statistics page
 - [ ] Need comment validation, too many fucking trolls
 - [ ] Change click to see to be subtitle
