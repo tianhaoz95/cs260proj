@@ -11,6 +11,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 
 - [ ] Change the text for no comment on statistics page
 - [ ] Need comment validation, too many fucking trolls
+- [ ] Add share button for social network
 - [ ] Change click to see to be subtitle
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
