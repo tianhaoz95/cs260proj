@@ -9,6 +9,8 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Need comment validation, too many fucking trolls
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
+- [ ] Add keras AI to check contribute image
+- [ ] Add NLP to check comment
 - [ ] Should probabaly disable cache at some point
 - [ ] Add mobile support (shouldn't take too long)
 - [ ] improve the machanism for what hashtags to show
