@@ -10,6 +10,7 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Need comment validation, too many fucking trolls
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
+- [ ] Change progress bar
 - [ ] Add more hint on the comment page
 - [ ] Add image on the comment page
 - [ ] Add image on the statistics page
