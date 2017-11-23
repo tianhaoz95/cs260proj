@@ -16,7 +16,6 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
 - [ ] Change progress bar
-- [ ] Add more hint on the comment page
 - [ ] Add image on the comment page
 - [ ] Add image on the statistics page
 - [ ] Add arrow hints on the statistics page
@@ -26,10 +25,12 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Add site structure for search console indexing
 - [ ] Should probabaly disable cache at some point
 - [ ] Add mobile support (shouldn't take too long)
-- [ ] improve the machanism for what hashtags to show
-- [ ] Improve UI design for statistics page
-- [ ] Add chart for the percentages on statitics page
 - [ ] Add room participant counter
+- [x] ~~Add more hint on the comment page~~
+- [x] ~~improve the machanism for what hashtags to show~~
+- [x] ~~Improve UI design for statistics page~~
+- [x] ~~Add chart for the percentages on statitics page~~
+- [x] ~~Separate development and production~~
 - [x] ~~Add redirect to meme maker on contribute page~~
 - [x] ~~Fix styling issue in Dropzone component on contribute page~~
 - [x] ~~Change the background to gradient~~
