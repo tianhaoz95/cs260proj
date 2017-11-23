@@ -171,12 +171,12 @@ class MemePage extends Component {
   render(){
     if (this.state.status === "empty") {
       return(
-        <div>
+        <div className="meme-page-empty">
           <div>
-            Empty
+            <h1>Sorry we don't have any memes at this moment</h1>
           </div>
           <div>
-            <Link to="/contribute"> Contribute! </Link>
+            <Link to="/contribute"> Click to be the first one to contribute! </Link>
           </div>
         </div>
       )
@@ -257,7 +257,7 @@ class MemePage extends Component {
               <input type="text" className="form-control" placeholder="Shout out your idea" aria-label="Shout out your idea" onChange={this.handleShoutout} ref={(ref) => {this.inputRef = ref}} onKeyDown={this.handleEnter}/>
               <span className="input-group-btn">
                 <button className="btn btn-success" type="button" onClick={this.handleShoutoutSend}>
-                  <i className="fa fa-paper-plane-o" aria-hidden="true"></i>
+                  <i className="fa fa-paper-plane-o" aria-hidden="true"></i> Try me out !!!
                 </button>
               </span>
             </div>

@@ -19,6 +19,18 @@ function randomnize(arr, n) {
   }
 }
 
+const backgroundColors = {
+  "dislike": "#dc3545",
+  "like": "#28a745",
+  "funny": "#ffc107"
+}
+
+const textColors = {
+  "dislike": "white",
+  "like": "white",
+  "funny": "black"
+}
+
 class StatisticPage extends Component {
   constructor(props){
   	super(props)
@@ -30,7 +42,9 @@ class StatisticPage extends Component {
       dislike: 0,
       funny: 0,
       comments: [],
-      show: []
+      show: [],
+      showtype: props.match.params.type,
+      url: ""
     }
     this.chartRef = null
     this.chartRendered = false
@@ -62,7 +76,8 @@ class StatisticPage extends Component {
           funnycomments: _.toArray(val.funnycomment),
           comments: comments,
           show: randcomments,
-          status: "ready"
+          status: "ready",
+          url: val.url
         })
       }
     })
@@ -101,7 +116,8 @@ class StatisticPage extends Component {
     var newrand = randomnize(comments, 5)
     this.setState({
       comments: comments,
-      show: newrand
+      show: newrand,
+      showtype: "like"
     })
   }
 
@@ -110,7 +126,8 @@ class StatisticPage extends Component {
     var newrand = randomnize(comments, 5)
     this.setState({
       comments: comments,
-      show: newrand
+      show: newrand,
+      showtype: "dislike"
     })
   }
 
@@ -119,7 +136,8 @@ class StatisticPage extends Component {
     var newrand = randomnize(comments, 5)
     this.setState({
       comments: comments,
-      show: newrand
+      show: newrand,
+      showtype: "funny"
     })
   }
 
@@ -154,17 +172,24 @@ class StatisticPage extends Component {
     var likeRatio = Math.round(this.state.like / total * 100)
     var dislikeRatio = Math.round(this.state.dislike / total * 100)
     var funnyRatio = Math.round(this.state.funny / total * 100)
+    var commentstyle = {
+      backgroundColor: backgroundColors[this.state.showtype], 
+      color: textColors[this.state.showtype]
+    }
 
     return(
       <div className="container statistics-page">
         <h1 className="statistics-title">What do other people think? Click to see their comments</h1>
-        <div className="row">
-          <div className="col">
+        <div className="row statistics-viz-group">
+          <div className="col-4">
+            <img className="statistics-img" alt="meme" src={this.state.url} />
+          </div>
+          <div className="col-4">
             <div className="statistics-chart-container">
               <canvas ref={(ref) => this.chartRef = ref} className="statistics-chart"></canvas>
             </div>
           </div>
-          <div className="col">
+          <div className="col-4">
             <div className="row">
               <button type="button" className="btn btn-success statistics-btn" onClick={this.handleSwitchLike}>
                 <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> Like: {likeRatio.toString()}%
@@ -189,14 +214,16 @@ class StatisticPage extends Component {
             </div>
           ) : (null)}
           {this.state.show.map((item, index) => (
-            <div className="list-group-item" key={index}>
+            <div className="list-group-item" style={commentstyle} key={index}>
               {item.comment}
             </div>
           ))}
         </div>
-        <button type="button" className="btn btn-light statistics-btn-nav" onClick={this.handleRandomize}>
-          <i className="fa fa-random" aria-hidden="true"></i> Some other opinions
-        </button>
+        {this.state.show.length === 5 ? (
+          <button type="button" className="btn btn-light statistics-btn-nav" onClick={this.handleRandomize}>
+            <i className="fa fa-random" aria-hidden="true"></i> Some other opinions
+          </button>
+        ) : (null)}
         <button type="button" className="btn btn-light statistics-btn-nav">
           <Link to="/meme" className="statistics-link">
             Go back for more memes

@@ -16,15 +16,22 @@
   width: 400px !important;
   text-align: left !important; }
 
+.meme-page-empty {
+  text-align: center; }
+  .meme-page-empty h1 {
+    color: white;
+    padding-top: 200px;
+    margin-bottom: 50px; }
+
 .meme-page .meme-btn {
   margin: 30px;
-  width: 50%;
+  width: 60%;
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5); }
 .meme-page .meme-page-hashtag {
   margin: 5px; }
 .meme-page .meme-input {
-  width: 50%;
-  margin-left: 25%;
+  width: 60%;
+  margin-left: 20%;
   margin-top: 30px;
   margin-bottom: 30px;
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5); }
@@ -36,7 +43,7 @@
 .meme-page .meme-img {
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
   margin-top: 100px;
-  max-width: 80%;
+  max-width: 85%;
   max-height: 400px;
   border-radius: 10px; }
 .meme-page .meme-contribute-link {
@@ -46,8 +53,19 @@
   text-align: center; }
   .comment-page .comment-title {
     color: white;
-    margin-top: 30px;
-    margin-bottom: 30px; }
+    margin-top: 20px;
+    margin-bottom: 10px; }
+  .comment-page .comment-subtitle {
+    color: white;
+    margin-bottom: 10px; }
+  .comment-page .comment-img-textarea-container {
+    width: 70%;
+    margin-left: 15%; }
+  .comment-page .comment-img {
+    max-width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    max-height: 120px; }
   .comment-page .comment-hashtag {
     margin: 5px; }
   .comment-page .comment-error {
@@ -61,12 +79,13 @@
   .comment-page .comment-page-secondary-container {
     padding-top: 100px; }
   .comment-page .comment-textarea {
-    width: 50%;
-    border-radius: 15px; }
+    width: 100%;
+    border-radius: 5px; }
   .comment-page .comment-btn {
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
-    width: 50%; }
+    width: 67%; }
 
 .statistics-page {
   text-align: center;
@@ -75,9 +94,17 @@
     color: white;
     margin-top: 10px;
     margin-bottom: 10px; }
+  .statistics-page .statistics-viz-group {
+    width: 80%;
+    margin-left: 10%; }
+  .statistics-page .statistics-img {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    max-height: 150px; }
   .statistics-page .statistics-chart-container {
-    width: 70%;
-    margin-left: 30%; }
+    width: 100%;
+    margin-top: 20px; }
   .statistics-page .statistics-link {
     display: block;
     height: 100%;
@@ -85,7 +112,7 @@
   .statistics-page .statistics-btn-group {
     text-align: center !important; }
   .statistics-page .statistics-btn {
-    width: 70%;
+    width: 100%;
     margin-top: 20px;
     box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5); }
   .statistics-page .statistics-btn-nav {

@@ -8,14 +8,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import registerServiceWorker from './registerServiceWorker'
 
-var config = {
-  apiKey: "AIzaSyCilF3wuHVm2OIydrURFDxJnEE-uy0u-cU",
-  authDomain: "cs260proj.firebaseapp.com",
-  databaseURL: "https://cs260proj.firebaseio.com",
-  projectId: "cs260proj",
-  storageBucket: "cs260proj.appspot.com",
-  messagingSenderId: "911039256627"
-};
+import productionConfig from './config/productionConfig'
+import developmentConfig from './config/developmentConfig'
+
+var config = null
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    config = developmentConfig
+} else {
+    config = productionConfig
+}
 
 firebase.initializeApp(config);
 
