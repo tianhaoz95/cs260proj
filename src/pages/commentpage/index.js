@@ -2,6 +2,7 @@ import * as firebase from 'firebase'
 
 import { Link, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
+import Score from './score'
 
 const titles = {
   "like": "Share with other people why did you like it",
@@ -18,7 +19,8 @@ class CommentPage extends Component {
       type: props.match.params.type,
       comment: "",
       hashtags: [],
-      hashtagsRec: []
+      hashtagsRec: [],
+      score: 0
     }
     this.commentChange = this.commentChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -51,16 +53,19 @@ class CommentPage extends Component {
     if (hashtags === null) {
       hashtags = []
     }
+    var score = Score(comment)
+    console.log(score)
     this.setState({
       comment: comment,
-      hashtags: hashtags
+      hashtags: hashtags,
+      score: score
     })
   }
 
   handleSubmit() {
     var thisObj = this
     thisObj.setState({status: "uploading"})
-    if (thisObj.state.comment !== "" && thisObj.state.comment.length > 25) {
+    if (thisObj.state.comment !== "" && thisObj.state.comment.length > 25 && thisObj.state.score > 60) {
       var comment = {
         comment: thisObj.state.comment
       }
@@ -194,12 +199,12 @@ class CommentPage extends Component {
           </div>
           {this.state.status === "error" ? (
             <div>
-              <p className="comment-error">Your comment should be more than 25 characters long</p>
+              <p className="comment-error">Your comment should score 60 or above. Try add more content.</p>
             </div>
           ) : (null)}
           <div>
             <button type="button" className="btn btn-success comment-btn" onClick={this.handleSubmit}>
-              <i className="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
+              <i className="fa fa-paper-plane-o" aria-hidden="true"></i> Submit, current score: {this.state.score}
             </button>
           </div>
           <div>
