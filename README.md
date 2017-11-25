@@ -16,16 +16,16 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
 - [ ] Change progress bar
-- [ ] Add image on the comment page
-- [ ] Add image on the statistics page
 - [ ] Add arrow hints on the statistics page
-- [ ] Add keras AI to check contribute image
 - [ ] Add NLP to check comment
 - [ ] Check for performance issues
 - [ ] Add site structure for search console indexing
 - [ ] Should probabaly disable cache at some point
 - [ ] Add mobile support (shouldn't take too long)
 - [ ] Add room participant counter
+- [x] ~~Add image on the comment page~~
+- [x] ~~Add image on the statistics page~~
+- [x] ~~Add keras AI to check contribute image~~
 - [x] ~~Add more hint on the comment page~~
 - [x] ~~improve the machanism for what hashtags to show~~
 - [x] ~~Improve UI design for statistics page~~
