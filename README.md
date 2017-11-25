@@ -5,6 +5,27 @@
 ## Project information
 Overall this is a react app. Most of the code is developed in JSX. The page folder contains all the pages, and the style folder contains all the style for the pages (global styles are in the index.css file). All the front end code should use JSX, vanilla Javascript and JQuery are not accepted (unless a uncessary package does not support npm module). For style, it's okay to experiment with CSS, but production level build should use SASS for better scalability.
 
+## Pre-requisites
+* node.js
+* firebase npm module
+* react.js npm module
+* webpack 2
+* sass/scss compiler
+
+## Related repos
+
+[Memeron AI core](https://github.com/tianhaoz95/memeron)
+[Memeron AI deploy](https://github.com/tianhaoz95/memeron-deploy)
+
+## Test locally
+First clone the repo, then go inside the project folder
+
+`npm install` will install the dependencies
+
+`npm start` will start the local server
+
+`npm run build` will execute production level build
+
 ## TODO
 
 <img src="https://raw.githubusercontent.com/tianhaoz95/pics/master/funny-gif-to-todo-list-done.gif" height="200"/>
@@ -40,22 +61,6 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 - [x] ~~Add hashtag detection, database support, and render method~~
 - [x] ~~Change the html title to "social echo chamber breaker"~~
 - [x] ~~Change color for comment page~~
-
-## Pre-requisites
-* node.js
-* firebase npm module
-* react.js npm module
-* webpack 2
-* sass/scss compiler
-
-## Test locally
-First clone the repo, then go inside the project folder
-
-`npm install` will install the dependencies
-
-`npm start` will start the local server
-
-`npm run build` will execute production level build
 
 ## Contribute
 Please send pull request only. Do not commit to the repo! Do not commit to the repo! Do not commit to the repo!
