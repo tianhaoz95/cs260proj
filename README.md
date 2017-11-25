@@ -65,3 +65,5 @@ First clone the repo, then go inside the project folder
 
 ## Contribute
 Please send pull request only. Do not commit to the repo! Do not commit to the repo! Do not commit to the repo!
+
+Email me at either one of two email addesses if you want to be a collaborator or need access to database or server.
