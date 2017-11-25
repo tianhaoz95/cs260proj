@@ -14,6 +14,8 @@ Overall this is a react app. Most of the code is developed in JSX. The page fold
 
 ## Related repos
 
+<img src="https://raw.githubusercontent.com/tianhaoz95/pics/master/giphy.gif" height="200"/>
+
 [Memeron AI core](https://github.com/tianhaoz95/memeron) - An AI trained to tell if a image is a meaningful meme.
 
 [Memeron AI deploy](https://github.com/tianhaoz95/memeron-deploy) - The server used to deploy that AI.
