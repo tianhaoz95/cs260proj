@@ -9,13 +9,19 @@ import React, { Component } from 'react'
 import DropzoneComponent from 'react-dropzone-component'
 import ReactDOM from 'react-dom'
 import ReactDOMServer from 'react-dom/server'
+import axios from 'axios'
+
+const endpoint = "https://memeron.herokuapp.com/api/validate"
+//const endpoint = "http://0.0.0.0:5000/api/validate"
 
 class ContributePage extends Component {
   constructor(props){
   	super(props)
   	this.state = {
       file: null,
-      status: "waiting"
+      status: "waiting",
+      ai_status: "none",
+      prob: 0
     }
     this.dropzone = null
     this.initCallback = this.initCallback.bind(this)
@@ -49,12 +55,32 @@ class ContributePage extends Component {
   }
 
   addFile(file) {
+    var thisObj = this
+    var data = new FormData()
+    data.append('image', file);
+    thisObj.setState({ai_status: "loading"})
+    axios.post(endpoint, data)
+    .then(function (response) {
+      console.log(response.data.probability);
+      var prob = Number(response.data.probability) * 100
+      thisObj.setState({
+        ai_status: "done",
+        prob: prob
+      })
+    })
+    .catch(function (err) {
+      thisObj.setState({ai_status: "error"})
+    })
     this.setState({file: file})
   }
 
   upload() {
     var thisObj = this
     if (thisObj.state.file === null || thisObj.state.file === undefined) {
+      thisObj.setState({status: "error"})
+      return
+    }
+    if (thisObj.state.prob < 5) {
       thisObj.setState({status: "error"})
       return
     }
@@ -106,6 +132,14 @@ class ContributePage extends Component {
         <Redirect to="/meme" />
       )
     }
+    console.log(this.state.prob);
+    var aimsg = "Our AI memeron will verify your meme"
+    if (this.state.ai_status === "loading") {
+      aimsg = "Our AI memeron is thinking about how to destory the world, wait a sec ..."
+    }
+    if (this.state.ai_status === "done") {
+      aimsg = "Your meme score is " + this.state.prob.toString() + "%"
+    }
     return(
       <div className="container contribute-page">
         <h1 className="contribute-title">We need you!</h1>
@@ -119,10 +153,13 @@ class ContributePage extends Component {
         {this.state.status === "error" ? (
           <div>
             <p className="contribute-msg">
-              File cannot be empty or less than 300 x 300
+              File cannot be empty or less than 300 x 300 or score less than 5%
             </p>
           </div>
         ) : null}
+        <p className="contribute-ai-msg">
+          {aimsg}
+        </p>
         {this.state.status === "uploading" ? (
           <div>
             <p className="contribute-msg">

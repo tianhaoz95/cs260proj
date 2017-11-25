@@ -129,6 +129,10 @@
   .contribute-page .contribute-title {
     color: white;
     margin-top: 30px; }
+  .contribute-page .contribute-ai-msg {
+    color: white;
+    margin: 0px;
+    padding: 0px; }
   .contribute-page .contribute-subtitle {
     color: white; }
   .contribute-page .contribute-dropbox {
@@ -140,7 +144,9 @@
   .contribute-page .contribute-dropbox .dz-progress {
     display: None; }
   .contribute-page .contribute-msg {
-    color: white; }
+    color: white;
+    margin: 0px;
+    padding: 0px; }
   .contribute-page .contribute-meme-generator-link {
     display: block;
     height: 100%; }
@@ -149,7 +155,7 @@
   .contribute-page .contribute-btn {
     width: 50%;
     box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.5);
-    margin-top: 20px; }
+    margin-top: 15px; }
   .contribute-page .contribute-cancel-link {
     display: block;
     height: 100%;
