@@ -119,7 +119,7 @@
   padding-top: 5px;
   .statistics-title {
     color: white;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
   }
   .statistics-viz-group {
@@ -158,6 +158,35 @@
     width: 80%;
     margin-left: 10%;
     margin-top: 20px;
+  }
+  .share-text {
+    color: white;
+    padding-top: 5px;
+  }
+  .facebook-share {
+    width: 100%;
+    background-color: #3b5998;
+    color: #ffffff;
+  }
+  .google-share {
+    width: 100%;
+    background-color: #d34836;
+    color: #ffffff;
+  }
+  .twitter-share {
+    width: 100%;
+    background-color: #1DA1F2;
+    color: #ffffff;
+  }
+  .whatsapp-share {
+    width: 100%;
+    background-color: #25D366;
+    color: #ffffff;
+  }
+  .pinterest-share {
+    width: 100%;
+    background-color: #BD081C;
+    color: #ffffff;
   }
 }
 

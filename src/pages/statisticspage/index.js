@@ -1,10 +1,57 @@
 import * as firebase from 'firebase'
 
 import React, { Component } from 'react'
+import {
+  ShareButtons,
+  ShareCounts,
+  generateShareIcon
+} from 'react-share'
 
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
 import Chart from 'chart.js'
+
+const {
+  FacebookShareButton,
+  GooglePlusShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  TelegramShareButton,
+  WhatsappShareButton,
+  PinterestShareButton,
+  VKShareButton,
+  OKShareButton,
+  RedditShareButton,
+  TumblrShareButton,
+  LivejournalShareButton,
+  EmailShareButton,
+} = ShareButtons
+
+const {
+  FacebookShareCount,
+  GooglePlusShareCount,
+  LinkedinShareCount,
+  PinterestShareCount,
+  VKShareCount,
+  OKShareCount,
+  RedditShareCount,
+  TumblrShareCount,
+} = ShareCounts
+
+const FacebookIcon = generateShareIcon('facebook')
+const TwitterIcon = generateShareIcon('twitter')
+const TelegramIcon = generateShareIcon('telegram')
+const WhatsappIcon = generateShareIcon('whatsapp')
+const GooglePlusIcon = generateShareIcon('google')
+const LinkedinIcon = generateShareIcon('linkedin')
+const PinterestIcon = generateShareIcon('pinterest')
+const VKIcon = generateShareIcon('vk')
+const OKIcon = generateShareIcon('ok')
+const RedditIcon = generateShareIcon('reddit')
+const TumblrIcon = generateShareIcon('tumblr')
+const LivejournalIcon = generateShareIcon('livejournal')
+const MailruIcon = generateShareIcon('mailru')
+const EmailIcon = generateShareIcon('email')
 
 function randomnize(arr, n) {
   if (n >= arr.length) {
@@ -173,7 +220,7 @@ class StatisticPage extends Component {
     var dislikeRatio = Math.round(this.state.dislike / total * 100)
     var funnyRatio = Math.round(this.state.funny / total * 100)
     var commentstyle = {
-      backgroundColor: backgroundColors[this.state.showtype], 
+      backgroundColor: backgroundColors[this.state.showtype],
       color: textColors[this.state.showtype]
     }
 
@@ -229,6 +276,56 @@ class StatisticPage extends Component {
             Go back for more memes
           </Link>
         </button>
+        <div className="row statistics-comment-group">
+          <div className="col">
+            <h4 className="share-text">Share on:</h4>
+          </div>
+          <div className="col">
+            <FacebookShareButton
+              quote={"Get your ideas across using memes"}
+              url={"https://cs260proj.firebaseapp.com"}>
+              <button className="btn facebook-share">
+                <i className="fa fa-facebook-official" aria-hidden="true"></i> Facebook
+              </button>
+            </FacebookShareButton>
+          </div>
+          <div className="col">
+            <GooglePlusShareButton
+              url={"https://cs260proj.firebaseapp.com"}>
+              <button className="btn google-share">
+                <i className="fa fa-google-plus-official" aria-hidden="true"></i> Google Plus
+              </button>
+            </GooglePlusShareButton>
+          </div>
+          <div className="col">
+            <TwitterShareButton
+              title={"Get your ideas across using memes"}
+              url={"https://cs260proj.firebaseapp.com"}>
+              <button className="btn twitter-share">
+                <i className="fa fa-twitter" aria-hidden="true"></i> Twitter
+              </button>
+            </TwitterShareButton>
+          </div>
+          <div className="col">
+            <WhatsappShareButton
+              title={"Get your ideas across using memes"}
+              url={"https://cs260proj.firebaseapp.com"}>
+              <button className="btn whatsapp-share">
+                <i className="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp
+              </button>
+            </WhatsappShareButton>
+          </div>
+          <div className="col">
+            <PinterestShareButton
+              description={"Get your ideas across using memes"}
+              media={this.state.url}
+              url={"https://cs260proj.firebaseapp.com"}>
+              <button className="btn pinterest-share">
+                <i className="fa fa-pinterest" aria-hidden="true"></i> Pinterest
+              </button>
+            </PinterestShareButton>
+          </div>
+        </div>
       </div>
     );
   }

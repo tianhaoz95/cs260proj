@@ -18,7 +18,9 @@
     "react-dom": "^16.0.0",
     "react-dropzone-component": "^2.0.0",
     "react-router-dom": "^4.2.2",
+    "react-share": "^1.18.0",
     "recharts": "^1.0.0-beta.0",
+    "social-share.js": "^1.0.16",
     "tweetparser.js": "^2.2.0"
   },
   "scripts": {

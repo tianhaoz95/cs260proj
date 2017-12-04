@@ -1,0 +1,52 @@
+[debug] [2017-12-04T00:03:02.743Z] ----------------------------------------------------------------------
+[debug] [2017-12-04T00:03:02.745Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-12-04T00:03:02.746Z] CLI Version:   3.15.2
+[debug] [2017-12-04T00:03:02.746Z] Platform:      darwin
+[debug] [2017-12-04T00:03:02.746Z] Node Version:  v8.9.1
+[debug] [2017-12-04T00:03:02.746Z] Time:          Sun Dec 03 2017 16:03:02 GMT-0800 (PST)
+[debug] [2017-12-04T00:03:02.746Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-04T00:03:02.758Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-04T00:03:02.758Z] > authorizing via signed-in user
+[debug] [2017-12-04T00:03:02.760Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cs260proj  
+ Sun Dec 03 2017 16:03:02 GMT-0800 (PST)
+[debug] [2017-12-04T00:03:03.198Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-04T00:03:03.199Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/cs260proj/tokens  
+ Sun Dec 03 2017 16:03:03 GMT-0800 (PST)
+[debug] [2017-12-04T00:03:03.675Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'cs260proj'...
+[info] 
+[info] i  deploying functions, hosting
+[debug] [2017-12-04T00:03:04.028Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.4.2",
+    "firebase-functions": "^0.7.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-12-04T00:03:04.029Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/cs260proj?view=CONSUMER_VIEW  
+ Sun Dec 03 2017 16:03:04 GMT-0800 (PST)
+[debug] [2017-12-04T00:03:04.030Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/cs260proj?view=CONSUMER_VIEW  
+ Sun Dec 03 2017 16:03:04 GMT-0800 (PST)
+[debug] [2017-12-04T00:03:05.774Z] <<< HTTP RESPONSE 200
+[info] ✔  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-12-04T00:03:05.792Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-12-04T00:03:05.793Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/cs260proj  
+ Sun Dec 03 2017 16:03:05 GMT-0800 (PST)
+[debug] [2017-12-04T00:03:05.793Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/cs260proj/apiKeys  
+ Sun Dec 03 2017 16:03:05 GMT-0800 (PST)
+[debug] [2017-12-04T00:03:06.256Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-04T00:03:06.312Z] <<< HTTP RESPONSE 200
