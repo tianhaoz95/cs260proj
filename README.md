@@ -34,7 +34,6 @@ First clone the repo, then go inside the project folder
 <img src="https://raw.githubusercontent.com/tianhaoz95/pics/master/funny-gif-to-todo-list-done.gif" height="200"/>
 
 - [ ] Change the text for no comment on statistics page
-- [ ] Add share button for social network
 - [ ] Change click to see to be subtitle
 - [ ] Add admin console and authentication for it
 - [ ] Populate homepage
@@ -45,6 +44,7 @@ First clone the repo, then go inside the project folder
 - [ ] Should probabaly disable cache at some point
 - [ ] Add mobile support (shouldn't take too long)
 - [ ] Add room participant counter
+- [x] ~~Add share button for social network~~
 - [x] ~~Add NLP to check comment~~
 - [x] ~~Need comment validation, too many fucking trolls~~
 - [x] ~~Add image on the comment page~~
