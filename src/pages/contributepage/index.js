@@ -187,6 +187,15 @@ class ContributePage extends Component {
             </Link>
           </button>
         </div>
+        <div className="contribute-ads-container">
+          <iframe
+            data-aa="777948"
+            src="//acceptable.a-ads.com/777948"
+            scrolling="no"
+            className="contribute-ads"
+            allowtransparency="true">
+          </iframe>
+        </div>
       </div>
     )
   }

@@ -192,7 +192,7 @@
 
 .contribute-page {
   text-align: center;
-  padding-top: 80px;
+  padding-top: 5px;
   .contribute-title {
     color: white;
     margin-top: 30px;
@@ -208,6 +208,14 @@
   .contribute-dropbox {
     width: 50%;
     margin-left: 25%;
+  }
+  .contribute-ads-container {
+    padding-top: 5px;
+    .contribute-ads {
+      margin: 0px;
+      overflow: hidden;
+      padding: 0px;
+    }
   }
   .contribute-dropbox {
     .dropzone.dz-clickable {
